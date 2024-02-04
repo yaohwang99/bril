@@ -6,6 +6,7 @@
 #include "program.h"
 #include "cfg.h"
 #include "tdce.h"
+#include "lvn.h"
 
 int main(int argc, char **argv) {
   // std::ifstream fin(argv[1], std::ifstream::binary);
@@ -20,6 +21,7 @@ int main(int argc, char **argv) {
     printCFG(B);
   }
   for (auto *head : blockHeads) {
+    lvn(head);
     tdce(head);
     printCFG(head);
   }
