@@ -8,6 +8,7 @@
 #include "tdce.h"
 #include "lvn.h"
 #include "lr.h"
+#include "dom.h"
 
 int main(int argc, char **argv) {
   // std::ifstream fin(argv[1], std::ifstream::binary);
@@ -24,7 +25,8 @@ int main(int argc, char **argv) {
   for (auto *head : blockHeads) {
     // lvn(head);
     // tdce(head);
-    lr(head);
+    // lr(head);
+    dom(head);
     printCFG(head);
   }
   return 0;
