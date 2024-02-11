@@ -6,9 +6,10 @@
 #include <map>
 #include <queue>
 #include <vector>
-void lr(Block *head) {
+#include <utility>
+std::pair<std::map<Block *, std::set<std::string>>,std::map<Block *, std::set<std::string>>>  lr(Block *head) {
   if (!head)
-    return;
+    return {};
   std::queue<Block *> q;
   std::set<Block *> visited;
   std::map<Block *, std::set<std::string>> in, out;
@@ -79,5 +80,6 @@ void lr(Block *head) {
       }
       std::cout<<std::endl;
   }
+  return {in, out};
 }
 #endif
